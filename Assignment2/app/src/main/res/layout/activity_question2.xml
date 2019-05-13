@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AbsoluteLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    tools:context=".Question2">
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_x="89dp"
+        android:layout_y="74dp"
+        android:text="Welcome to the Second question"
+        tools:layout_editor_absoluteX="111dp"
+        tools:layout_editor_absoluteY="291dp" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_x="54dp"
+        android:layout_y="146dp"
+        android:text="Q2. What is the Maori name for New Zealand?"
+        tools:layout_editor_absoluteX="160dp"
+        tools:layout_editor_absoluteY="141dp" />
+
+    <EditText
+        android:id="@+id/editText2"
+        android:layout_width="373dp"
+        android:layout_height="119dp"
+        android:layout_x="20dp"
+        android:layout_y="456dp"
+        android:ems="10"
+        android:gravity="start|top"
+        android:inputType="none"
+        tools:layout_editor_absoluteX="-44dp"
+        tools:layout_editor_absoluteY="436dp" />
+
+    <Button
+        android:id="@+id/buttonSub2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_x="163dp"
+        android:layout_y="396dp"
+        android:text="Submit"
+        tools:layout_editor_absoluteX="157dp"
+        tools:layout_editor_absoluteY="369dp" />
+
+    <RadioGroup
+        android:id="@+id/RadioGroup2"
+        android:layout_width="202dp"
+        android:layout_height="143dp"
+        android:layout_x="56dp"
+        android:layout_y="201dp"
+        tools:layout_editor_absoluteX="54dp"
+        tools:layout_editor_absoluteY="169dp">
+
+        <RadioButton
+            android:id="@+id/radioButton5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Waikato"
+            tools:layout_editor_absoluteX="59dp"
+            tools:layout_editor_absoluteY="213dp" />
+
+        <RadioButton
+            android:id="@+id/radioButton6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Aotearoa"
+            tools:layout_editor_absoluteX="59dp"
+            tools:layout_editor_absoluteY="213dp" />
+
+        <RadioButton
+            android:id="@+id/radioButton7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Aetoronui"
+            tools:layout_editor_absoluteX="59dp"
+            tools:layout_editor_absoluteY="213dp" />
+
+        <RadioButton
+            android:id="@+id/radioButton8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Whanganui"
+            tools:layout_editor_absoluteX="59dp"
+            tools:layout_editor_absoluteY="213dp" />
+    </RadioGroup>
+</AbsoluteLayout>
