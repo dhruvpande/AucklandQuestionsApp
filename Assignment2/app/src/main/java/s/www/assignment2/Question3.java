@@ -9,12 +9,19 @@ import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 import org.w3c.dom.Text;
 
 public class Question3 extends AppCompatActivity implements View.OnClickListener{
 
     private Button btnSubmit;
+    FirebaseDatabase database = FirebaseDatabase.getInstance();
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -22,6 +29,8 @@ public class Question3 extends AppCompatActivity implements View.OnClickListener
         //It is the 12th largest island in the world and South Island is the 14th.
         btnSubmit = findViewById(R.id.buttonSub2);
         btnSubmit.setOnClickListener(this);
+        DatabaseReference myRef = database.getReference("1");
+        Toast.makeText(this,myRef.)
     }
 
     @Override

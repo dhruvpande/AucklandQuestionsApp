@@ -8,17 +8,21 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
-import android.widget.Toast;
+import android.widget.TextView;
 
-public class Question1 extends AppCompatActivity implements View.OnClickListener{
+public class QuestionPage extends AppCompatActivity implements View.OnClickListener{
 
     private Button btnSubmit;
+    private TextView textView;
+    private TextView textView2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_question1);
+        setContentView(R.layout.activity_question);
         btnSubmit = findViewById(R.id.buttonSub1);
+        textView = findViewById(R.id.textView2);
+        textView = findViewById(R.id.textView3);
         btnSubmit.setOnClickListener(this);
     }
 

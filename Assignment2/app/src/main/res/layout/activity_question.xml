@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    tools:context=".Question1">
+    tools:context=".QuestionPage">
 
     <TextView
         android:id="@+id/textView2"
@@ -12,7 +12,6 @@
         android:layout_height="wrap_content"
         android:layout_x="89dp"
         android:layout_y="74dp"
-        android:text="Welcome to the first question"
         tools:layout_editor_absoluteX="111dp"
         tools:layout_editor_absoluteY="291dp" />
 
