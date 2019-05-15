@@ -30,4 +30,14 @@
         tools:layout_editor_absoluteX="143dp"
         tools:layout_editor_absoluteY="419dp" />
 
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="116dp"
+        android:layout_height="116dp"
+        android:layout_x="137dp"
+        android:layout_y="71dp"
+        tools:layout_editor_absoluteX="149dp"
+        tools:layout_editor_absoluteY="68dp"
+        tools:srcCompat="@tools:sample/avatars" />
+
 </AbsoluteLayout>

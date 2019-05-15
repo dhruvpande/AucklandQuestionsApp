@@ -1,6 +1,7 @@
 package s.www.assignment2;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -17,6 +18,9 @@ import com.squareup.picasso.Picasso;
 import java.io.File;
 import java.util.ArrayList;
 
+/**
+ * This class handles the question page. It loads each question and displays it along with the answers and a short fact.
+ */
 public class Questionpage extends AppCompatActivity implements View.OnClickListener {
     public ImageView imgb;
     public TextView txtQ;
@@ -34,7 +38,10 @@ public class Questionpage extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_questionpage);
         questions=MainActivity.getQuestions();
-        //Picasso.get().load(new File(questions.get(MainActivity.getQuestionNumber()).getImgFilename())).into(imgb);
+        imgb = findViewById(R.id.imageView);
+        String s = "file:///data/"+questions.get(MainActivity.getQuestionNumber()).getImgFilename();
+
+        Picasso.get().load(new File(s)).into(imgb);
         txtQ = findViewById(R.id.textViewQ);
         txtQ.setText(questions.get(MainActivity.getQuestionNumber()).getQuestion());
         rdbtn1 = findViewById(R.id.radioButton1);
@@ -56,25 +63,31 @@ public class Questionpage extends AppCompatActivity implements View.OnClickListe
         edtxtAnswer = findViewById(R.id.editText);
         View radioButton = rdgrp.findViewById(rdgrp.getCheckedRadioButtonId());
         int idx = rdgrp.indexOfChild(radioButton);
+
         if(idx==questions.get(MainActivity.getQuestionNumber()).getCorrectAnswer())
         {
             String answer = "Correct Answer. ";
-            MainActivity.setCount(MainActivity.getCount()+1);
+            int [] temp = MainActivity.getCount();
+            temp[MainActivity.getQuestionNumber()]+=1;
+            MainActivity.setCount(temp);
             answer+= questions.get(MainActivity.getQuestionNumber()).getAnswerExplanation();
             edtxtAnswer.setText(answer);
             btnSubmit.setText("Next");
             btnSubmit.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    if (MainActivity.getQuestionNumber()<questions.size()-2)
+                    MainActivity.setQuestionNumber(MainActivity.getQuestionNumber() + 1);
+
+                    if (MainActivity.getQuestionNumber()<MainActivity.noofquesitons)
                     {
                         final Intent in = new Intent(Questionpage.this, Questionpage.class);
-                        MainActivity.setQuestionNumber(MainActivity.getQuestionNumber() + 1);
+
                         startActivity(in);
                     }
+                    //if end of the quiz
                     else
                     {
-                        final Intent in = new Intent();
+                        final Intent in = new Intent(Questionpage.this,Final.class);
                         startActivity(in);
                     }
 
@@ -85,7 +98,9 @@ public class Questionpage extends AppCompatActivity implements View.OnClickListe
         {
             String wrong ="Wrong Answer. Please Try Again.";
             edtxtAnswer.setText(wrong);
-            MainActivity.setCount(MainActivity.getCount()+1);
+            int [] temp = MainActivity.getCount();
+            temp[MainActivity.getQuestionNumber()]+=1;
+            MainActivity.setCount(temp);
         }
     }
 }

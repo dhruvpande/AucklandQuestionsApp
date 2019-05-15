@@ -1,11 +1,23 @@
 package s.www.assignment2;
 
+/**
+ * This Class is made to hold the questions of the quiz
+ */
 public class Questions {
+    private double ID;
     private String imgFilename;
     private String question;
     private String [] answers = new String[4];
     private int correctAnswer;
     private String answerExplanation;
+
+    public double getID() {
+        return ID;
+    }
+
+    public void setID(double ID) {
+        this.ID = ID;
+    }
 
     public String getImgFilename() {
         return imgFilename;
@@ -59,5 +71,12 @@ public class Questions {
         res+="----------------------------------------\n";
 
         return res;
+    }
+
+    @Override
+    public boolean equals(Object obj)
+    {
+        Questions q = (Questions) obj;
+        return (this.getID()==q.getID());
     }
 }
