@@ -9,6 +9,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
@@ -41,16 +42,10 @@ public class Questionpage extends AppCompatActivity implements View.OnClickListe
         setContentView(R.layout.activity_questionpage);
         questions=MainActivity.getQuestions();
         imgb = findViewById(R.id.imageView);
-        String s = "/sdcard/downloads/"+questions.get(MainActivity.getQuestionNumber()).getImgFilename();
-
-        //imgb.setImageBitmap(BitmapFactory.decodeFile(s));
-
-        System.out.println(questions.get(MainActivity.getQuestionNumber()).getImgFilename());
         int resID = getResources().getIdentifier(questions.get(MainActivity.getQuestionNumber()).getImgFilename(),"drawable",getPackageName());
-        System.out.println(resID);
         Picasso.get().load(resID).into(imgb);
         txtQ = findViewById(R.id.textViewQ);
-        txtQ.setText(questions.get(MainActivity.getQuestionNumber()).getQuestion());
+        txtQ.setText("Q"+(MainActivity.getQuestionNumber()+1)+". "+questions.get(MainActivity.getQuestionNumber()).getQuestion());
         rdbtn1 = findViewById(R.id.radioButton1);
         rdbtn2 = findViewById(R.id.radioButton2);
         rdbtn3 = findViewById(R.id.radioButton3);
@@ -61,6 +56,9 @@ public class Questionpage extends AppCompatActivity implements View.OnClickListe
         rdbtn4.setText(questions.get(MainActivity.getQuestionNumber()).getAnswers()[3]);
         btnSubmit = findViewById(R.id.buttonSubmit);
         btnSubmit.setOnClickListener(this);
+        ProgressBar psbar = findViewById(R.id.progressBar2);
+        psbar.setMax(MainActivity.noofquesitons);
+        psbar.setProgress(MainActivity.getQuestionNumber());
     }
 
     @Override

@@ -13,8 +13,8 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="112dp"
         android:layout_marginRight="112dp"
-        android:layout_x="85dp"
-        android:layout_y="246dp"
+        android:layout_x="93dp"
+        android:layout_y="297dp"
         android:text="Welcome to the New Zealand Quiz"
         android:visibility="visible"
         app:layout_constraintEnd_toEndOf="parent"
@@ -32,10 +32,10 @@
 
     <ImageView
         android:id="@+id/imageView3"
-        android:layout_width="116dp"
-        android:layout_height="116dp"
-        android:layout_x="137dp"
-        android:layout_y="71dp"
+        android:layout_width="308dp"
+        android:layout_height="236dp"
+        android:layout_x="46dp"
+        android:layout_y="33dp"
         tools:layout_editor_absoluteX="149dp"
         tools:layout_editor_absoluteY="68dp"
         tools:srcCompat="@tools:sample/avatars" />

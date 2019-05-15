@@ -71,6 +71,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         {
             readData();
         }
+        //For randomization of the questions so that each time you opened the app you would get new
+        //questions or in a different order
+        Collections.shuffle(questions);
     }
 
     @Override
@@ -82,15 +85,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void readData()
     {
         int i=0;
-        Random rand = new Random();
-
         while(scan.hasNext())
         {
-            //For randomization of the questions so that each time you opened the app you would get new
-            //questions or in a different order
-            int skip = rand.nextInt(3);
-//            for(int j=0;j<=skip;j++)
-//                scan.nextLine();
 
             String line = scan.nextLine();
             String[] words = line.split(",");
@@ -116,14 +112,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 questions.get(i).setAnswerExplanation(words[8]);
                 i++;
             }
-
-            //checks if it has reached the end of the file and if the arraylist is not filled up
-            if(!scan.hasNext())
-            {
-                if (questions.size()<10)
-                    scan = new Scanner(getResources().openRawResource(R.raw.questions));
-            }
-
         }
     }
 
