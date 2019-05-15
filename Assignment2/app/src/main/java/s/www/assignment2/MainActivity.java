@@ -57,10 +57,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        System.out.println("Start");
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        System.out.println("Start");
         Button btnGo = findViewById(R.id.buttonGo);
         btnGo.setOnClickListener(this);
         scan = new Scanner(getResources().openRawResource(R.raw.questions));
