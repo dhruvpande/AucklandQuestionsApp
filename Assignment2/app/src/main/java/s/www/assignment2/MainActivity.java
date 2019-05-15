@@ -104,7 +104,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             {
                 questions.add(new Questions());
                 questions.get(i).setID(Integer.parseInt(words[0]));
-                questions.get(i).setImgFilename(words[1]);
+                questions.get(i).setImgFilename(words[1].trim());
                 questions.get(i).setQuestion(words[2]);
                 String[] answers = new String[4];
                 answers[0] = words[3];

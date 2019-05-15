@@ -17,6 +17,8 @@ import com.squareup.picasso.Picasso;
 
 import java.io.File;
 import java.util.ArrayList;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 
 /**
  * This class handles the question page. It loads each question and displays it along with the answers and a short fact.
@@ -39,9 +41,14 @@ public class Questionpage extends AppCompatActivity implements View.OnClickListe
         setContentView(R.layout.activity_questionpage);
         questions=MainActivity.getQuestions();
         imgb = findViewById(R.id.imageView);
-        String s = "file:///data/"+questions.get(MainActivity.getQuestionNumber()).getImgFilename();
+        String s = "/sdcard/downloads/"+questions.get(MainActivity.getQuestionNumber()).getImgFilename();
 
-        Picasso.get().load(new File(s)).into(imgb);
+        //imgb.setImageBitmap(BitmapFactory.decodeFile(s));
+
+        System.out.println(questions.get(MainActivity.getQuestionNumber()).getImgFilename());
+        int resID = getResources().getIdentifier(questions.get(MainActivity.getQuestionNumber()).getImgFilename(),"drawable",getPackageName());
+        System.out.println(resID);
+        Picasso.get().load(resID).into(imgb);
         txtQ = findViewById(R.id.textViewQ);
         txtQ.setText(questions.get(MainActivity.getQuestionNumber()).getQuestion());
         rdbtn1 = findViewById(R.id.radioButton1);
@@ -53,7 +60,6 @@ public class Questionpage extends AppCompatActivity implements View.OnClickListe
         rdbtn3.setText(questions.get(MainActivity.getQuestionNumber()).getAnswers()[2]);
         rdbtn4.setText(questions.get(MainActivity.getQuestionNumber()).getAnswers()[3]);
         btnSubmit = findViewById(R.id.buttonSubmit);
-        System.out.println(MainActivity.getCount());
         btnSubmit.setOnClickListener(this);
     }
 
